@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Your selected list</h1>
+  <h2><%= @list.name %></h2>
+  <div  class = "p-3">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card">
+        <div class='d-flex gap-5 m-3 '>
+          <%= image_tag bookmark.movie.poster_url, width: '100px' %>
+          <h2><%= bookmark.movie.title %></h2>
+          <p><%= bookmark.movie.overview %></p>
+          <%= link_to "Delete this bookmark", bookmark_path(bookmark), method: :delete, class: 'btn btn-danger', data: { confirm: "delete #{bookmark.movie.title}?"} %>
+        </div>
+        <p>comments:</p>
+        <p><%= bookmark.comment %></p>
+        <%# <li><%= link_to 'Add a rating to this movie list', </li> %>
+      </div>
+    <% end %>
+  </div >
+  <%= link_to "Add a bookmark", new_list_bookmark_path(@list), class: 'btn btn-info' %>
+</div>
