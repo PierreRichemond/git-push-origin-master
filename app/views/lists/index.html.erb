@@ -5,6 +5,9 @@
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <%= link_to list.name, list_path(list) %>
+          <% if list.photo.attached? %>
+            <%= cl_image_tag(list.photo.key, height: 300, width: 400, crop: :fill) %>
+          <% end %>
         </div>
       </div>
     </div>
