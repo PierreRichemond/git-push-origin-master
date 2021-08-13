@@ -1,6 +1,10 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  justify-content: space-around;
+  // background-image: 'hollywood';
+  height: 150px;
+  li {
+font-size: 25px;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {

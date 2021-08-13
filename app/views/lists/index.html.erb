@@ -1,15 +1,14 @@
 <div class="container mt-3">
   <h1>Select your movie-style</h1>
-  <% @lists.each do|list| %>
-    <div class="d-flex justify-content-between">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <%= link_to list.name, list_path(list) %>
-          <% if list.photo.attached? %>
-            <%= cl_image_tag(list.photo.key, height: 300, width: 400, crop: :fill) %>
-          <% end %>
+  <div class="row">
+    <% @lists.each do|list| %>
+      <div class="card col-3 card-size m-3" style="width: 18rem;">
+        <%= link_to list_path(list), class: 'card-link' do %><% end %>
+        <div class="card-body perso-card" style="background-image: url(<%= list.photo.attached? ?
+      cl_image_path(list.photo.key) : image_path('http://placehold.jp/400x300.png') %>)">
+          <%= link_to list.name, list_path(list)%>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
