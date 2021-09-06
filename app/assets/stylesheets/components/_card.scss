@@ -1,17 +1,20 @@
 .perso-card {
     text-decoration: none;
-    color: orange;
+    color: white;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
     font-size: 35px;
     text-align: center;
     line-height: 80%;
     padding-bottom: 0;
-
+    background-image: cover;
+    border-radius: 5px;
 }
 
 .card-size {
-  height: 100px;
+  height: 400px;
 }
-.card {
+.card1 {
   position: relative;
 }
 
@@ -19,7 +22,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100%;
+  width: 90%;
 }
 
 .card-body {
@@ -30,4 +33,26 @@
   padding-left: 0;
   padding-right: 0;
 
+}
+
+.card-show{
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+      margin-bottom: 30px;
+      position: relative;
+      padding: 20px;
+}
+
+.show-image{
+  height:auto;
+}
+
+.absolute1{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.margin-bot{
+  margin-bottom: 200px;
 }
