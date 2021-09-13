@@ -3,12 +3,15 @@
   <div class="row">
     <% @lists.each do|list| %>
       <div class="card1 col-12 col-md-6 col-lg-4 card-size gap-1 my-4">
-        <%= link_to list_path(list), class: 'card-link' do %>
-          <div class="card-body perso-card" style="background-image: url(<%= list.photo.attached? ?
-            cl_image_path(list.photo.key) : image_path('https://img-19.ccm2.net/HBieDLy0LheYz2zkrl2JbG9Brm4=/1000x420/smart/6246fc94bad94dda9c611a1fdc87dd76/ccmcms-commentcamarche/23887428.jpg') %>)">
-            <p><%= list.name %></p>
-          </div>
+        <%= link_to list.name.capitalize, list_path(list), class: 'list-name'%>
+        <%= link_to list_path(list),
+  method: :delete, class: 'delete-list',
+  data: { confirm: "delete #{list.name.capitalize}}?"} do%>
+          <i class="fas fa-times"></i>
         <% end %>
+        <div class="card-body perso-card" style="background-image: url(<%= list.photo.attached? ?
+            cl_image_path(list.photo.key) : image_path('https://img-19.ccm2.net/HBieDLy0LheYz2zkrl2JbG9Brm4=/1000x420/smart/6246fc94bad94dda9c611a1fdc87dd76/ccmcms-commentcamarche/23887428.jpg') %>)">
+        </div>
       </div>
     <% end %>
   </div>

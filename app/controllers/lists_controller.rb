@@ -23,6 +23,12 @@ class ListsController < ApplicationController
     #   redirects to the created list (FAILED - 6)
   end
 
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+    redirect_to lists_path
+  end
+
   private
 
   def list_params
