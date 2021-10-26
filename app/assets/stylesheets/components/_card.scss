@@ -77,6 +77,14 @@
   grid-gap: 16px;
 }
 
+.box{
+  border: 1px 1px 1px grey;
+  box-shadow: 4px 2px 2px grey;
+  background: cornsilk;
+  padding: 2em;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
 
